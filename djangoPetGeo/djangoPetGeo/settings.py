@@ -76,11 +76,11 @@ WSGI_APPLICATION = 'djangoPetGeo.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'pet_geo_db',
-        'USER': 'yashi_dev',
+        'NAME': 'postgres',
+        'USER': 'postgres',
         'PASSWORD': '8596dbPASS',
-        'HOST': 'localhost',
-        'PORT': '',
+        'HOST': '0.0.0.0',
+        'PORT': '5432',
     }
 }
 

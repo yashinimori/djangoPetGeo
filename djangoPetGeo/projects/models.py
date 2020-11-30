@@ -8,7 +8,7 @@ class Projects(models.Model):
 
 class GeoObjects(geo_models.Model):
     name = models.CharField(max_length=30)
-    project = models.ForeignKey(Projects)
+    project = models.ForeignKey('Projects', on_delete=models.CASCADE)
 
     class Meta:
         abstract = True
