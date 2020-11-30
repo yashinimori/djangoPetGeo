@@ -20,6 +20,6 @@ RUN pip install -r requirements.txt && \
     pip install gdal --no-cache-dir
 
 # copy project
-COPY .
+COPY . .
 
 ENTRYPOINT ["/usr/src/djangoPetGeo/entrypoint.sh"]
