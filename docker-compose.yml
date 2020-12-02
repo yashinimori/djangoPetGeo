@@ -1,4 +1,23 @@
 version: '3.7'
 services:
+  web:
+    build: ./djangoPetGeo
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./djangoPetGeo/:/usr/src/djangoPetGeo/
+    ports:
+      - 8000:8000
+    env_file:
+      - ./.env.dev
   db:
     image: mdillon/postgis
+    ports:
+      - 5432:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=8596dbPASS
+      - POSTGRES_DB=pet_geo_db
+volumes:
+  postgres_data:
