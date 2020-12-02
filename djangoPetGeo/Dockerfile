@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.8.6-alpine
+FROM python:3.8.6-slim
 
 # set work directory
 WORKDIR /usr/src/djangoPetGeo
@@ -8,15 +8,16 @@ WORKDIR /usr/src/djangoPetGeo
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1
 
-RUN apk update \
-    && apk add postgresql-dev gcc python3-dev musl-dev
+RUN apt-get update && \
+    apt-get install -y postgresql postgresql-contrib gcc python3-dev musl-dev libgdal-dev gdal-bin
 
-RUN apk add --no-cache --repository http://dl-cdn.alpinelinux.org/alpine/edge/testing gdal-dev
+ENV CPLUS_INCLUDE_PATH=/usr/include/gdal
+ENV C_INCLUDE_PATH=/usr/include/gdal
 
 # install dependencies
 RUN pip install --upgrade pip
 COPY ./requirements.txt .
-RUN pip install -r requirements.txt && \
+RUN pip install -r requirements.txt --no-cache-dir && \
     pip install gdal --no-cache-dir
 
 # copy project
