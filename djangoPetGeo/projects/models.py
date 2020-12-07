@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Projects(models.Model):
-    pass
+    name = models.CharField(max_length=30)
 
 
 class GeoObjects(geo_models.Model):
