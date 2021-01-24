@@ -1,0 +1,34 @@
+{
+  "name": "djangoPetGeo",
+  "version": "1.0.0",
+  "description": "It's my pet project for adding geo data to map.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack -- mode development ./djangoPetGeo/frontend/src/index.js --output ./djangoPetGeo/frontend/static/frontend/main.js",
+    "build": "webpack -- mode production ./djangoPetGeo/frontend/src/index.js --output ./djangoPetGeo/frontend/static/frontend/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yashinimori/djangoPetGeo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yashinimori/djangoPetGeo/issues"
+  },
+  "homepage": "https://github.com/yashinimori/djangoPetGeo#readme",
+  "devDependencies": {
+    "@babel/core": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "webpack-cli": "^4.4.0"
+  },
+  "dependencies": {
+    "prop-types": "^15.7.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  }
+}
