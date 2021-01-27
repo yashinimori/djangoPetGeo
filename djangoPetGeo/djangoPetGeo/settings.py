@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'leaflet',
     'projects',
     'rest_framework',
+    'frontend'
 ]
 
 MIDDLEWARE = [
